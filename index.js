@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, "public")));
 //   });
 
 app.post("/api/v1/quiz", (req, res) => {
-    const answer = req.body.answer;
+    const answer = req.body.answer;A
     if (answer === "2"){
         // res.send("<h1>正解</h1>");
         res.redirect("/correct.html");
@@ -24,6 +24,8 @@ app.post("/api/v1/quiz", (req, res) => {
     }
 })
 
-app.listen(3000, function () {
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, function () {
     console.log("i am running!");
 });
